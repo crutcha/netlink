@@ -6,62 +6,62 @@ import (
 )
 
 type TCPInfo struct {
-	State                     uint8
-	Ca_state                  uint8
-	Retransmits               uint8
-	Probes                    uint8
-	Backoff                   uint8
-	Options                   uint8
-	Snd_wscale                uint8 // no uint4
-	Rcv_wscale                uint8
-	Delivery_rate_app_limited uint8
-	Fastopen_client_fail      uint8
-	Rto                       uint32
-	Ato                       uint32
-	Snd_mss                   uint32
-	Rcv_mss                   uint32
-	Unacked                   uint32
-	Sacked                    uint32
-	Lost                      uint32
-	Retrans                   uint32
-	Fackets                   uint32
-	Last_data_sent            uint32
-	Last_ack_sent             uint32
-	Last_data_recv            uint32
-	Last_ack_recv             uint32
-	Pmtu                      uint32
-	Rcv_ssthresh              uint32
-	Rtt                       uint32
-	Rttvar                    uint32
-	Snd_ssthresh              uint32
-	Snd_cwnd                  uint32
-	Advmss                    uint32
-	Reordering                uint32
-	Rcv_rtt                   uint32
-	Rcv_space                 uint32
-	Total_retrans             uint32
-	Pacing_rate               uint64
-	Max_pacing_rate           uint64
-	Bytes_acked               uint64 /* RFC4898 tcpEStatsAppHCThruOctetsAcked */
-	Bytes_received            uint64 /* RFC4898 tcpEStatsAppHCThruOctetsReceived */
-	Segs_out                  uint32 /* RFC4898 tcpEStatsPerfSegsOut */
-	Segs_in                   uint32 /* RFC4898 tcpEStatsPerfSegsIn */
-	Notsent_bytes             uint32
-	Min_rtt                   uint32
-	Data_segs_in              uint32 /* RFC4898 tcpEStatsDataSegsIn */
-	Data_segs_out             uint32 /* RFC4898 tcpEStatsDataSegsOut */
-	Delivery_rate             uint64
-	Busy_time                 uint64 /* Time (usec) busy sending data */
-	Rwnd_limited              uint64 /* Time (usec) limited by receive window */
-	Sndbuf_limited            uint64 /* Time (usec) limited by send buffer */
-	Delivered                 uint32
-	Delivered_ce              uint32
-	Bytes_sent                uint64 /* RFC4898 tcpEStatsPerfHCDataOctetsOut */
-	Bytes_retrans             uint64 /* RFC4898 tcpEStatsPerfOctetsRetrans */
-	Dsack_dups                uint32 /* RFC4898 tcpEStatsStackDSACKDups */
-	Reord_seen                uint32 /* reordering events seen */
-	Rcv_ooopack               uint32 /* Out-of-order packets received */
-	Snd_wnd                   uint32 /* peer's advertised receive window after * scaling (bytes) */
+	State                     uint8  `json:"state"`
+	Ca_state                  uint8  `json:"ca_state"`
+	Retransmits               uint8  `json:"retransmits"`
+	Probes                    uint8  `json:"probes"`
+	Backoff                   uint8  `json:"backoff"`
+	Options                   uint8  `json:"options"`
+	Snd_wscale                uint8  `json:"snd_wscale"`
+	Rcv_wscale                uint8  `json:"rcv_wscale"`
+	Delivery_rate_app_limited uint8  `json:"delivery_rate_app_limited"`
+	Fastopen_client_fail      uint8  `json:"fastopen_client_fail"`
+	Rto                       uint32 `json:"rto"`
+	Ato                       uint32 `json:"ato"`
+	Snd_mss                   uint32 `json:"snd_mss"`
+	Rcv_mss                   uint32 `json:"rcv_mss"`
+	Unacked                   uint32 `json:"unacked"`
+	Sacked                    uint32 `json:"sacked"`
+	Lost                      uint32 `json:"lost"`
+	Retrans                   uint32 `json:"retrans"`
+	Fackets                   uint32 `json:"fackets"`
+	Last_data_sent            uint32 `json:"last_data_sent"`
+	Last_ack_sent             uint32 `json:"last_ack_sent"`
+	Last_data_recv            uint32 `json:"last_data_recv"`
+	Last_ack_recv             uint32 `json:"last_ack_recv"`
+	Pmtu                      uint32 `json:"pmtu"`
+	Rcv_ssthresh              uint32 `json:"rcv_ssthresh"`
+	Rtt                       uint32 `json:"rtt"`
+	Rttvar                    uint32 `json:"rttvar"`
+	Snd_ssthresh              uint32 `json:"snd_sshthresh"`
+	Snd_cwnd                  uint32 `json:"send_cwnd"`
+	Advmss                    uint32 `json:"advmss"`
+	Reordering                uint32 `json:"reordering"`
+	Rcv_rtt                   uint32 `json:"rcv_rtt"`
+	Rcv_space                 uint32 `json:"rcv_space"`
+	Total_retrans             uint32 `json:"total_retrains"`
+	Pacing_rate               uint64 `json:"pacing_rate"`
+	Max_pacing_rate           uint64 `json:"max_pacing_rate"`
+	Bytes_acked               uint64 `json:"bytes_acked"`    /* RFC4898 tcpEStatsAppHCThruOctetsAcked */
+	Bytes_received            uint64 `json:"bytes_received"` /* RFC4898 tcpEStatsAppHCThruOctetsReceived */
+	Segs_out                  uint32 `json:"segs_out"`       /* RFC4898 tcpEStatsPerfSegsOut */
+	Segs_in                   uint32 `json:"segs_in"`        /* RFC4898 tcpEStatsPerfSegsIn */
+	Notsent_bytes             uint32 `json:"notsent_bytes"`
+	Min_rtt                   uint32 `json:"min_rtt"`
+	Data_segs_in              uint32 `json:"data_segs_in"`   /* RFC4898 tcpEStatsDataSegsIn */
+	Data_segs_out             uint32 `json:"data_segs_out" ` /* RFC4898 tcpEStatsDataSegsOut */
+	Delivery_rate             uint64 `json:"delivery_rate"`
+	Busy_time                 uint64 `json:"busy_time"`      /* Time (usec) busy sending data */
+	Rwnd_limited              uint64 `json:"rwnd_limited"`   /* Time (usec) limited by receive window */
+	Sndbuf_limited            uint64 `json:"sndbuf_limited"` /* Time (usec) limited by send buffer */
+	Delivered                 uint32 `json:"delivered"`
+	Delivered_ce              uint32 `json:"delivered_ce"`
+	Bytes_sent                uint64 `json:"bytes_sent"`    /* RFC4898 tcpEStatsPerfHCDataOctetsOut */
+	Bytes_retrans             uint64 `json:"bytes_retrans"` /* RFC4898 tcpEStatsPerfOctetsRetrans */
+	Dsack_dups                uint32 `json:"dsack_dups"`    /* RFC4898 tcpEStatsStackDSACKDups */
+	Reord_seen                uint32 `json:"reord_seen"`    /* reordering events seen */
+	Rcv_ooopack               uint32 `json:"rcv_ooopack"`   /* Out-of-order packets received */
+	Snd_wnd                   uint32 `json:"snd_wnd"`       /* peer's advertised receive window after * scaling (bytes) */
 }
 
 func checkDeserErr(err error) error {

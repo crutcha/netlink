@@ -14,14 +14,14 @@ type SocketID struct {
 
 // Socket represents a netlink socket.
 type Socket struct {
-	Family  uint8
-	State   uint8
-	Timer   uint8
-	Retrans uint8
-	ID      SocketID
-	Expires uint32
-	RQueue  uint32
-	WQueue  uint32
-	UID     uint32
-	INode   uint32
+	Family  uint8    `json:"family"`
+	State   uint8    `json:"state"`
+	Timer   uint8    `json:"timer"`
+	Retrans uint8    `json:"retrans"`
+	ID      SocketID `json:"id"`
+	Expires uint32   `json:"expires"`
+	RQueue  uint32   `json:"rqueue"`
+	WQueue  uint32   `json:"wqueue"`
+	UID     uint32   `json:"uid"`
+	INode   uint32   `json:"inode"`
 }

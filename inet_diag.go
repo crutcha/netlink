@@ -25,6 +25,6 @@ const (
 )
 
 type InetDiagTCPInfoResp struct {
-	InetDiagMsg *Socket
-	TCPInfo     *TCPInfo
+	InetDiagMsg *Socket  `json:"inet_diag_msg"`
+	TCPInfo     *TCPInfo `json:"tcp_info"`
 }
